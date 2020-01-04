@@ -2,7 +2,7 @@
 
 ### Commits
 
-- Initial commit 
+- Initial commit [`26c42bf`](https://github.com/frugan-it/docker-bitnami-mariadb-galera/commit/26c42bf312210a71c6c62ed2abb1a91ed903e70e)
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
