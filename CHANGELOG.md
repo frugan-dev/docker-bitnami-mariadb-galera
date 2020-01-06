@@ -2,7 +2,8 @@
 
 ### Commits
 
-- Updated .env file [`703fcf3`](https://github.com/frugan-it/docker-bitnami-mariadb-galera/commit/703fcf3e3f8f1de1d4ff4f3bc3f8b9f3c6775066)
+- Updated docker-compose file [`1487c5f`](https://github.com/frugan-it/docker-bitnami-mariadb-galera/commit/1487c5f25200ed61de882e4dc021b82429a3d9e8)
+- Updated .env file [`eeab3bf`](https://github.com/frugan-it/docker-bitnami-mariadb-galera/commit/eeab3bf685de5fbdc0108da1b1e5aeb31827a0d0)
 - Updated CHANGELOG [`8fa0fc1`](https://github.com/frugan-it/docker-bitnami-mariadb-galera/commit/8fa0fc1c01dd063f3626b8a02f7df827dc54150a)
 
 ## v1.0.0 - 2020-01-04

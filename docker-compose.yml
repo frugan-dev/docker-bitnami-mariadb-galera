@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
 
-  mariadb-galera-master:
+  mariadb-galera:
     container_name: ${MARIADB_GALERA_NAME}
     build:
       context: .
@@ -13,26 +13,29 @@ services:
       - default
     environment:
       #MARIADB_EXTRA_FLAGS: '--max-connect-errors=1000 --max_connections=155'
+      ALLOW_EMPTY_PASSWORD: ${MARIADB_GALERA_ALLOW_EMPTY_PASSWORD}
       MARIADB_ROOT_USER: ${MARIADB_GALERA_ROOT_USER}
       MARIADB_ROOT_PASSWORD: ${MARIADB_GALERA_ROOT_PASSWORD}
-      MARIADB_DATABASES: ${MARIADB_GALERA_DATABASES}
+      MARIADB_USER: ${MARIADB_GALERA_USER}
+      MARIADB_PASSWORD: ${MARIADB_GALERA_PASSWORD}
+      MARIADB_DATABASE: ${MARIADB_GALERA_DATABASE}
       MARIADB_GALERA_CLUSTER_BOOTSTRAP: 'yes'
       MARIADB_GALERA_CLUSTER_NAME: ${MARIADB_GALERA_CLUSTER_NAME}
       MARIADB_GALERA_CLUSTER_ADDRESS: ${MARIADB_GALERA_CLUSTER_ADDRESS}
       MARIADB_GALERA_MARIABACKUP_USER: ${MARIADB_GALERA_MARIABACKUP_USER}
       MARIADB_GALERA_MARIABACKUP_PASSWORD: ${MARIADB_GALERA_MARIABACKUP_PASSWORD}
 
-  mariadb-galera-slave:
-    container_name: ${MARIADB_GALERA_NAME}-slave
+  mariadb-galera-slave-1:
+    container_name: ${MARIADB_GALERA_NAME}-slave-1
     build:
       context: .
       args:
         MARIADB_GALERA_TAG: ${MARIADB_GALERA_TAG}
     restart: always
     depends_on:
-      - mariadb-galera-master
+      - mariadb-galera
     links:
-      - mariadb-galera-master:${MARIADB_GALERA_NAME}
+      - mariadb-galera:${MARIADB_GALERA_NAME}
     networks:
       - default
     environment:
