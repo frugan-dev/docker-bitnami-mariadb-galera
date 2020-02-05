@@ -7,4 +7,6 @@
 
 ARG MARIADB_GALERA_TAG
 
-FROM bitnami/mariadb-galera:${MARIADB_GALERA_TAG:-latest}
+ENV MARIADB_GALERA_TAG=${MARIADB_GALERA_TAG:-latest}
+
+FROM bitnami/mariadb-galera:${MARIADB_GALERA_TAG}
